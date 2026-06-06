@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+void qsort(int a[],int l,int r){
+	if(l>=r) return;
+	int j=l,k=r,mid=a[(l+r)/2];
+	while(j<=k){
+		while(mid>a[j]) j++;
+        while(mid<a[k]) k--;
+		if(j<=k) {
+		swap(a[j],a[k]);
+		j++;
+		k--;	
+	}}
+	qsort(a,l,k);
+	qsort(a,j,r);
+}
+int main(){
+	int a[199999];
+	int n;
+	cin>>n;
+	for(int i=0;i<n;i++){
+		cin>>a[i];
+	}
+	qsort(a,0,n-1);
+	for(int i=0;i<n;i++) cout<<a[i]<<" ";
+	return 0;
+} 
