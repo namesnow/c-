@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+struct jinbi{
+	int m,v;
+}a[100];
+bool cmp(jinbi a,jinbi b){
+	return (long long)a.v*b.m>(long long)a.m*b.v; 
+}
+int main(){ 
+	int n,t;
+	int z=0;
+	double all=0; 
+	cin>>n>>t; 
+
+for(int i=0;i<n;i++){
+		cin>>a[i].m>>a[i].v;}
+	sort(a,a+n,cmp);
+	
+	for(int i=0;i<n;i++){
+	if(z+a[i].m<=t){
+	all+=a[i].v;
+	z+=a[i].m;}
+	else{
+		int left=t-z;
+		all+=(double)a[i].v/a[i].m*left;
+		break;
+	}}
+	cout<<fixed<<setprecision(2)<<all;
+	return 0;
+	}
+
