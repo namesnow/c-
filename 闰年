@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+bool isrn(int x){
+	if((x%4==0&&x%100!=0)||x%400==0){
+		return true;
+	}return false;
+}
+int main(){
+	int a[1000];
+	int n,m;
+	cin>>n>>m;
+	int count =0;
+	for(int year=n;year<m;year++){
+		if(isrn(year)){
+   		count++;
+	   }}
+	cout<<count<<endl; 
+	for(int year=n;year<m;year++){
+		if(isrn(year)){
+   		cout<<year<<" ";}}
+return 0;
+
+} 
